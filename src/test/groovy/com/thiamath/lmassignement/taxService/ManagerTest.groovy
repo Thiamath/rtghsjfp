@@ -6,10 +6,17 @@ import spock.lang.Specification
 class TaxServiceManagerTest extends Specification {
 
     def "Input/Output test"() {
-        given: "the tax service manager"
-        def taxServiceManager = new TaxServiceManager()
+        given: "a basic configuration for the service"
+        def configuration = new Configuration()
+        configuration.setBasicTax(new BigDecimal("0.10"))
+        configuration.setImportedTax(new BigDecimal("0.05"))
+
+        and: "the tax service manager"
+        def taxServiceManager = new TaxServiceManager(configuration)
+
         expect: "that the tax service processes correctly the inputs"
         taxServiceManager.process(input) == expectedOutput
+
         where:
         input       || expectedOutput
         ALPHA_INPUT || ALPHA_EXPECT
