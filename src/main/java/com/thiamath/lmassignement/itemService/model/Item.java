@@ -1,4 +1,4 @@
-package com.thiamath.lmassignement.taxService.model;
+package com.thiamath.lmassignement.itemService.model;
 
 import lombok.Data;
 

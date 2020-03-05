@@ -1,5 +1,6 @@
 package com.thiamath.lmassignement.taxService.model;
 
+import com.thiamath.lmassignement.itemService.model.Item;
 import lombok.Data;
 
 import java.math.BigDecimal;
