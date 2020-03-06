@@ -1,5 +1,6 @@
 package com.thiamath.lmassignement.taxService
 
+
 import spock.lang.Shared
 import spock.lang.Specification
 
@@ -11,8 +12,11 @@ class TaxServiceManagerTest extends Specification {
         configuration.setBasicTax(new BigDecimal("0.10"))
         configuration.setImportedTax(new BigDecimal("0.05"))
 
+        and: "an item handler"
+        def itemServiceHandler = new Ecosystem().itemServiceHandler()
+
         and: "the tax service manager"
-        def taxServiceManager = new TaxServiceManager(configuration)
+        def taxServiceManager = new TaxServiceManager(configuration, itemServiceHandler)
 
         expect: "that the tax service processes correctly the inputs"
         taxServiceManager.process(input) == expectedOutput

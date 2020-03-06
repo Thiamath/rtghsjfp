@@ -9,5 +9,8 @@ import java.math.BigDecimal;
 public class LineItem {
     private final Item item;
     private final int count;
+    private final boolean imported;
     private final BigDecimal itemPrice;
+    private final BigDecimal itemTax;
+    private final BigDecimal lineFinalPrice;
 }
